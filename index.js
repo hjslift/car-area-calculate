@@ -37,37 +37,25 @@ app.get('/calculateArea/asdf', (req, res) => {
 
     const results = runCalculations(resultCA, resultCB, DT, resultJJ, resultNOE, resultW);
 
-    // Constructing HTML response with basic formatting
-    const responseHTML = `
-        <html>
-        <head>
-            <title>Calculation Results</title>
-            <style>
-                body { font-family: Arial, sans-serif; }
-                h4 { color: navy; }
-                p { color: black; }
-                h3 { color: red; }
-            </style>
-        </head>
-        <body>
-            <h4>카면적 계산검토서</h4>
-            <p>CA = ${results.CA}</p>
-            <p>CB = ${results.CB}</p>
-            <p>JJ = ${results.JJ}</p>
-            <p>Door Type = "${results.DT}"</p>
-            <p>NOE = ${results.NOE}</p>
-            <p>W = ${results.W}</p>
-            <p>persons = ${results.persons}</p>
-            <p>AA = ${results.AA}</p>
-            <p>areaData of table5 = ${results.areaData}</p>
-            <p>area of table7 = ${results.areaOfTable7}</p>
-            <h3>${results.result}</h3>
-        </body>
-        </html>
+    // Constructing Markdown response
+    const responseMarkdown = `
+#### 카면적 계산검토서
+
+- **CA** = ${results.CA}
+- **CB** = ${results.CB}
+- **JJ** = ${results.JJ}
+- **Door Type** = "${results.DT}"
+- **NOE** = ${results.NOE}
+- **W** = ${results.W}
+- **persons** = ${results.persons}
+- **AA** = ${results.AA}
+- **areaData of table5** = ${results.areaData}
+- **area of table7** = ${results.areaOfTable7}
+### ${results.result}
     `;
 
-    // Sending the HTML response
-    res.send(responseHTML);
+    // Sending the Markdown response
+    res.send(responseMarkdown);
 });
 
 
