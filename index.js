@@ -39,19 +39,19 @@ app.get('/calculateArea/asdf', (req, res) => {
 
     // Constructing Markdown response
     const responseMarkdown = `
-#### 카면적 계산검토서
+# 카면적 계산검토서
 
-- **CA** = ${results.CA}
-- **CB** = ${results.CB}
-- **JJ** = ${results.JJ}
-- **Door Type** = "${results.DT}"
-- **NOE** = ${results.NOE}
-- **W** = ${results.W}
-- **persons** = ${results.persons}
-- **AA** = ${results.AA}
-- **areaData of table5** = ${results.areaData}
-- **area of table7** = ${results.areaOfTable7}
-### ${results.result}
+- CA = ${results.CA}
+- CB = ${results.CB}
+- JJ = ${results.JJ}
+- Door Type = "${results.DT}"
+- NOE = ${results.NOE}
+- W = ${results.W}
+- persons = ${results.persons}
+- AA = ${results.AA}
+- areaData of table5 = ${results.areaData}
+- area of table7 = ${results.areaOfTable7}
+# ${results.result}
     `;
 
     // Sending the Markdown response
